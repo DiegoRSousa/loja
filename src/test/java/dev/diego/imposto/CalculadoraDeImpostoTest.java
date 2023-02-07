@@ -14,9 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CalculadoraDeImpostoTest {
 
     @ParameterizedTest()
-    @MethodSource("criaTipoComImposto")
+    @MethodSource("criaImpostoComValor")
     @DisplayName("deve calcular imposto quando tipo igual a ICMS")
-    void test(TipoImposto input, BigDecimal expected) {
+    void test(Imposto input, BigDecimal expected) {
         var calculadoraDeImposto  = new CalculadoraDeImposto();
         var orcamento = new Orcamento(new BigDecimal("100.00"));
 
@@ -25,9 +25,9 @@ class CalculadoraDeImpostoTest {
         assertEquals(expected, imposto);
     }
 
-    private static Stream<Arguments> criaTipoComImposto() {
+    private static Stream<Arguments> criaImpostoComValor() {
         return Stream.of(
-                Arguments.of(TipoImposto.ICMS, new BigDecimal("10.0000")),
-                Arguments.of(TipoImposto.ISS, new BigDecimal("6.0000")));
+                Arguments.of(new ICMS(), new BigDecimal("10.0000")),
+                Arguments.of(new ISS(), new BigDecimal("6.0000")));
     }
 }
