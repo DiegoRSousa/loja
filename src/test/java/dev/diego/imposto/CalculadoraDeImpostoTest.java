@@ -18,7 +18,7 @@ class CalculadoraDeImpostoTest {
     @DisplayName("deve calcular imposto quando tipo igual a ICMS")
     void test(Imposto input, BigDecimal expected) {
         var calculadoraDeImposto  = new CalculadoraDeImposto();
-        var orcamento = new Orcamento(new BigDecimal("100.00"));
+        var orcamento = new Orcamento(new BigDecimal("100.00"), 1);
 
         var imposto = calculadoraDeImposto.calcular(orcamento, input);
 
