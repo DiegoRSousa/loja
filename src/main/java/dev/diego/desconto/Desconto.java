@@ -1,6 +1,6 @@
 package dev.diego.desconto;
 
-import dev.diego.Orcamento;
+import dev.diego.orcamento.Orcamento;
 
 import java.math.BigDecimal;
 

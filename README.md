@@ -13,4 +13,8 @@ passá-la para o próximo gerenciador da cadeia.
 ## Template Method
 É um design pattern comportamental que define o esqueleto de um algoritmo
 em uma superclasse mas permite que as subclasses substituam etapas especificas
-do algoritmo sem modificar a estrutura
+do algoritmo sem modificar a estrutura.
+
+## State
+É um design pattern comportamental que permite que um objeto altere seu comportamento
+quando seu estado interno muda.

@@ -1,6 +1,6 @@
 package dev.diego.imposto;
 
-import dev.diego.Orcamento;
+import dev.diego.orcamento.Orcamento;
 import dev.diego.desconto.CalculadoraDeDesconto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
