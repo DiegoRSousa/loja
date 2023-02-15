@@ -13,16 +13,4 @@ public class Pedido {
         this.cliente = cliente;
         this.orcamento = orcamento;
     }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public LocalDateTime getData() {
-        return data;
-    }
-
-    public Orcamento getOrcamento() {
-        return orcamento;
-    }
 }

@@ -18,3 +18,7 @@ do algoritmo sem modificar a estrutura.
 ## State
 É um design pattern comportamental que permite que um objeto altere seu comportamento
 quando seu estado interno muda.
+
+## Command
+É um padrão de projeto comportamental que transforma uma solicitação em um objeto autônomo
+que contém todas as informações sobre a solicitação.
