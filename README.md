@@ -20,5 +20,10 @@ do algoritmo sem modificar a estrutura.
 quando seu estado interno muda.
 
 ## Command
-É um padrão de projeto comportamental que transforma uma solicitação em um objeto autônomo
+É um design pattern comportamental que transforma uma solicitação em um objeto autônomo
 que contém todas as informações sobre a solicitação.
+
+## Observer
+É um design pattern comportamental que permite definir um mecanismo de assinatura para
+notificar vários objetos sobre quaisquer eventos que ocorram com o objeto que eles estão 
+observando.

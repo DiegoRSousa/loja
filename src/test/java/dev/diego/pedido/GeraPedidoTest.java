@@ -5,6 +5,8 @@ import dev.diego.pedido.service.EmailService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GeraPedidoTest {
@@ -13,10 +15,11 @@ class GeraPedidoTest {
     @Test
     @DisplayName("deve executar geracao de pedido")
     void test() {
-        var repository = new PedidoRepository();
-        var service = new EmailService();
+        var acoesApoGerarPedido
+                = Arrays.asList(new PedidoRepository(), new EmailService());
+
         var geraPedido = new GeraPedido("Teste", "100.00", 3,
-                repository, service);
+                acoesApoGerarPedido);
         var resultado = geraPedido.executa();
 
         assertTrue(resultado);
