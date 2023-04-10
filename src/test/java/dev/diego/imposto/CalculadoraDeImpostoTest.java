@@ -26,7 +26,8 @@ class CalculadoraDeImpostoTest {
 
     private static Stream<Arguments> criaImpostoComValor() {
         return Stream.of(
-                Arguments.of(new ICMS(), new BigDecimal("10.0000")),
-                Arguments.of(new ISS(), new BigDecimal("6.0000")));
+                Arguments.of(new ICMS(null), new BigDecimal("10.0000")),
+                Arguments.of(new ISS(null), new BigDecimal("6.0000")),
+                Arguments.of(new ICMS(new ISS(null)), new BigDecimal("16.0000")));
     }
 }
