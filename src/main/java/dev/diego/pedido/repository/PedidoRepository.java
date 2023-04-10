@@ -1,9 +1,12 @@
 package dev.diego.pedido.repository;
 
+import dev.diego.pedido.AcaoAposGerarPedido;
 import dev.diego.pedido.Pedido;
 
-public class PedidoRepository {
+public class PedidoRepository implements AcaoAposGerarPedido {
 
-    public void save(Pedido pedido) {
+    @Override
+    public void executarAcao(Pedido pedido) {
+
     }
 }
