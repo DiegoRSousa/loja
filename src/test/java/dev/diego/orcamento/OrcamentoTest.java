@@ -24,7 +24,7 @@ class OrcamentoTest {
 
     @DisplayName("Deve aplicar desconto extra quando orcamento em_analize")
     @Test
-    void test1(){
+    void test01(){
 
         orcamento.aplicarDescontoExtra();
 
@@ -34,7 +34,7 @@ class OrcamentoTest {
 
     @DisplayName("Deve aplicar desconto extra quando orcamento aprovado")
     @Test
-    void test2(){
+    void test02(){
         orcamento.aprovar();
         orcamento.aplicarDescontoExtra();
 
@@ -44,7 +44,7 @@ class OrcamentoTest {
 
     @DisplayName("Deve aplicar desconto extra quando orcamento reprovado")
     @Test
-    void test3(){
+    void test03(){
         orcamento.reprovar();
         orcamento.aplicarDescontoExtra();
 
@@ -56,7 +56,7 @@ class OrcamentoTest {
 
     @DisplayName("Deve aplicar desconto extra quando orcamento finalizado")
     @Test
-    void test4(){
+    void test04(){
         orcamento.aprovar();
         orcamento.finalizar();
         orcamento.aplicarDescontoExtra();
@@ -67,16 +67,25 @@ class OrcamentoTest {
 
     @DisplayName("deve finalizar orcamento reprovado")
     @Test
-    void test5() {
+    void test05() {
         orcamento.reprovar();
         orcamento.finalizar();
 
         assertInstanceOf(Finalizado.class, orcamento.getSituacao());
     }
 
+    @DisplayName("deve compor orcamento")
+    @Test
+    void test06() {
+        var novoOrcamento = new Orcamento();
+        novoOrcamento.adicionarItem(new ItemOrcamento(new BigDecimal("200.00")));
+        novoOrcamento.adicionarItem(orcamento);
+        assertEquals(new BigDecimal("300.00"), novoOrcamento.getValor());
+    }
+
     @DisplayName("deve lançar exception quando finalizar orcamento em_analise")
     @Test
-    void test6() {
+    void test07() {
         assertThrows(IllegalStateException.class,
                 orcamento::finalizar,
                 "Orçamento não pode ser finalizado!");
@@ -84,7 +93,7 @@ class OrcamentoTest {
 
     @DisplayName("deve lançar exception quando aprovar orcamento finalizado")
     @Test
-    void test8() {
+    void test08() {
         orcamento.aprovar();
         orcamento.finalizar();
         assertThrows(IllegalStateException.class,
@@ -94,7 +103,7 @@ class OrcamentoTest {
 
     @DisplayName("deve lançar exception quando reprovar orcamento finalizado")
     @Test
-    void test9() {
+    void test09() {
         orcamento.aprovar();
         orcamento.finalizar();
         assertThrows(IllegalStateException.class,
