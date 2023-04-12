@@ -1,5 +1,6 @@
 package dev.diego.imposto;
 
+import dev.diego.orcamento.ItemOrcamento;
 import dev.diego.orcamento.Orcamento;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -18,7 +19,9 @@ class CalculadoraDeImpostoTest {
     @DisplayName("deve calcular imposto quando tipo igual a ICMS")
     void test(Imposto input, BigDecimal expected) {
         var calculadoraDeImposto  = new CalculadoraDeImposto();
-        var orcamento = new Orcamento(new BigDecimal("100.00"), 1);
+        var item = new ItemOrcamento(new BigDecimal("100.00"));
+        var orcamento = new Orcamento();
+        orcamento.adicionarItem(item);
         var imposto = calculadoraDeImposto.calcular(orcamento, input);
 
         assertEquals(expected, imposto);

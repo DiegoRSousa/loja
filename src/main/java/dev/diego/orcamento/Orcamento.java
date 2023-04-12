@@ -4,16 +4,18 @@ import dev.diego.orcamento.situacao.EmAnalise;
 import dev.diego.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Orcamento {
     private BigDecimal valor;
-    private final int quantidadeItens;
     private SituacaoOrcamento situacao;
+    private List<ItemOrcamento> itens;
 
-    public Orcamento(BigDecimal valor, int quantidadeItens) {
-        this.valor = valor;
-        this.quantidadeItens = quantidadeItens;
+    public Orcamento() {
+        this.valor = BigDecimal.ZERO;
         this.situacao = new EmAnalise();
+        this.itens = new ArrayList<>();
     }
 
     public void aplicarDescontoExtra() {
@@ -38,7 +40,7 @@ public class Orcamento {
     }
 
     public int getQuantidadeItens() {
-        return quantidadeItens;
+        return itens.size();
     }
 
     public SituacaoOrcamento getSituacao() {
@@ -47,5 +49,10 @@ public class Orcamento {
 
     public void setSituacao(SituacaoOrcamento situacao) {
         this.situacao = situacao;
+    }
+
+    public void adicionarItem(ItemOrcamento item) {
+        this.valor = valor.add(item.valor());
+        this.itens.add(item);
     }
 }

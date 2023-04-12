@@ -4,6 +4,7 @@ import dev.diego.orcamento.situacao.Aprovado;
 import dev.diego.orcamento.situacao.EmAnalise;
 import dev.diego.orcamento.situacao.Finalizado;
 import dev.diego.orcamento.situacao.Reprovado;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrcamentoTest {
 
     private final BigDecimal valor = new BigDecimal("100.00");
-    private final Orcamento orcamento = new Orcamento(valor, 2);
+    private final Orcamento orcamento = new Orcamento();
+
+    @BeforeEach
+    void setup() {
+        orcamento.adicionarItem(new ItemOrcamento(new BigDecimal("100.00")));
+    }
 
     @DisplayName("Deve aplicar desconto extra quando orcamento em_analize")
     @Test
