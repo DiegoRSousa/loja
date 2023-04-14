@@ -1,4 +1,6 @@
-package dev.diego.pedido;
+package dev.diego.pedido.acoes;
+
+import dev.diego.pedido.Pedido;
 
 public interface AcaoAposGerarPedido {
 

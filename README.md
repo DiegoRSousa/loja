@@ -35,3 +35,7 @@ objetos ao colocá-los dentro de invólucros de objetos que contém os comportam
 ## Composite
 É um design pattern estrutural que permite que você componha objetos em estruturas de 
 árvores e então trabalhe com essas estruturas como se elas fossem objetos individuais.
+
+##  Facede
+É um design pattern estrutural que fornece uma interface simplificada para uma biblioteca,
+um framework, ou qualquer conjunto de classes.
