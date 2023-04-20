@@ -39,3 +39,8 @@ objetos ao colocá-los dentro de invólucros de objetos que contém os comportam
 ##  Facede
 É um design pattern estrutural que fornece uma interface simplificada para uma biblioteca,
 um framework, ou qualquer conjunto de classes.
+
+## Proxy
+É um design pattern estrutural que permite que você forneça um substituto ou um espaço
+reservado para outro objeto. Um proxy controla o acesso ao objeto original, permitindo 
+que você faça algo ou antes ou depois do pedido chegar ao objeto original.
